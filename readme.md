@@ -1,4 +1,4 @@
-# LangJS v2.0 🌍
+# LangJS 
 
 Un framework JavaScript moderne et puissant pour la gestion multilingue de vos pages web. Sans dépendances, léger et facile à utiliser.
 
@@ -25,9 +25,6 @@ Un framework JavaScript moderne et puissant pour la gestion multilingue de vos p
 
 ### Option 2: CDN (à venir)
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/langjs@2.0.0/dist/langjs.min.js"></script>
-```
 
 ## 🚀 Démarrage rapide
 
@@ -469,5 +466,6 @@ Développé par **Emmadiblo**
 Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
 
 ---
+
 
 **Enjoy coding! 🚀**
