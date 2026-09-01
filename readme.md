@@ -1,6 +1,6 @@
 # LangJS 
 
-Un framework JavaScript moderne et puissant pour la gestion multilingue de vos pages web. Sans dépendances, léger et facile à utiliser.
+Un framework JavaScript simple mais puissant pour la gestion de la traduction multilingue de vos pages web. Sans dépendances, léger et facile à utiliser.
 
 ## ✨ Fonctionnalités
 
@@ -23,7 +23,10 @@ Un framework JavaScript moderne et puissant pour la gestion multilingue de vos p
 <script src="path/to/langjs.js"></script>
 ```
 
-### Option 2: CDN (à venir)
+### Option 2: npm
+```javascript
+npm install langjs.js
+```
 
 
 ## 🚀 Démarrage rapide
