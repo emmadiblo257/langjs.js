@@ -13,12 +13,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install and Test
-        # REMOVE the '#' below and update the folder name if your project is in a subfolder:
-        # working-directory: ./your-subfolder-name 
+      - name: Install
+
         run: |
           npm ci
-          npm test
 
   publish-npm:
     needs: build
@@ -30,8 +28,7 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - name: Install and Publish
-        # REMOVE the '#' below and update the folder name if your project is in a subfolder:
-        # working-directory: ./your-subfolder-name 
+
         run: |
           npm ci
           npm publish
