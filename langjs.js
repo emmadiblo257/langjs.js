@@ -1,6 +1,6 @@
 /**
- * LangJS v2.0 - Advanced language manager for your Webpage
- * Developed by Emmadiblo
+ * LangJS v1.0.0 - Advanced language manager
+ * Developed by EMMADIBLO
  * No dependencies required (Vanilla JS)
  */
 
