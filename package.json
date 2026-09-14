@@ -1,7 +1,7 @@
 {
   "name": "langjs.js",
-  "version": "1.0.0",
-  "description": "LangJS is an advanced, lightweight, and dependency-free (Vanilla JS) language manager designed for modern webpages.",
+  "version": "1.0.1",
+  "description": "LangJS is a simple yet powerful JavaScript framework for multilingual translation management.",
   "main": "langjs.js",
   "files": [
     "langjs.js",
