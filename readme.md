@@ -1,19 +1,15 @@
 # LangJS 
 
-
-
 [![npm version](https://img.shields.io/npm/v/langjs.js)](https://www.npmjs.com/package/langjs.js)
 [![NPM Downloads](https://img.shields.io/npm/dm/langjs.js)](https://www.npmjs.com/package/langjs.js)
 [![NPM License](https://img.shields.io/npm/l/langjs.js)](https://www.npmjs.com/package/langjs.js)
-
-
 
 A simple yet powerful JavaScript framework for multilingual translation management on your web pages. Dependency-free, lightweight, and easy to use.
 
 ## ✨ Features
 
 - ✅ **Vanilla JavaScript** - No dependencies required
-- 🚀 **Lightweight & Fast** - < 5KB minified
+- 🚀 **Lightweight & Fast** - < 10KB minified
 - 🔄 **Auto-Detection** - Detects browser language automatically
 - 💾 **Persistence** - Saves user language preferences
 - 🎯 **Dot Notation** - Supports nested keys (`home.title.main`)
@@ -95,7 +91,7 @@ votre-projet/
 }
 ```
 
-### 3. Basic HTML
+### 3. Basic HTML Example
 
 ```html
 <!DOCTYPE html>
