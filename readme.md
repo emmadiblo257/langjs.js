@@ -1,37 +1,43 @@
 # LangJS 
 
-Un framework JavaScript simple mais puissant pour la gestion de la traduction multilingue de vos pages web. Sans dépendances, léger et facile à utiliser.
+[![NPM Version](https://shields.io)](https://npmjs.com)
+[![NPM Downloads](https://shields.io)](https://npmjs.com)
+[![GitHub License](https://shields.io)](https://github.com)
+[![GitHub Stars](https://shields.io)](https://github.com/stargazers)
+[![GitHub Issues](https://shields.io)](https://github.com/issues)
 
-## ✨ Fonctionnalités
+A simple yet powerful JavaScript framework for multilingual translation management on your web pages. Dependency-free, lightweight, and easy to use.
 
-- ✅ **Vanilla JavaScript** - Aucune dépendance requise
-- 🚀 **Léger et rapide** - < 5KB minifié
-- 🔄 **Détection automatique** - Langue du navigateur
-- 💾 **Persistance** - Sauvegarde de la préférence utilisateur
-- 🎯 **Notation par points** - Clés imbriquées (`home.title.main`)
-- 🔍 **Observation DOM** - Traduction automatique du contenu dynamique
-- 🎨 **Interpolation** - Paramètres dans les traductions
-- 📅 **Formatage** - Dates, nombres et devises
-- 🌐 **RTL Support** - Langues de droite à gauche
-- ⚡ **Cache intelligent** - Performance optimisée
+## ✨ Features
+
+- ✅ **Vanilla JavaScript** - No dependencies required
+- 🚀 **Lightweight & Fast** - < 5KB minified
+- 🔄 **Auto-Detection** - Detects browser language automatically
+- 💾 **Persistence** - Saves user language preferences
+- 🎯 **Dot Notation** - Supports nested keys (`home.title.main`)
+- 🔍 **DOM Observation** - Automatically translates dynamic content
+- 🎨 **Interpolation** - Supports parameters within translations
+- 📅 **Formatting** - Format dates, numbers, and currencies
+- 🌐 **RTL Support** - Supports right-to-left languages
+- ⚡ **Smart Cache** - Optimized performance
 
 ## 📦 Installation
 
-### Option 1: Téléchargement direct
+### Option 1: Direct Download
 
 ```html
 <script src="path/to/langjs.js"></script>
 ```
 
 ### Option 2: npm
-```javascript
+```bash
 npm install langjs.js
 ```
 
 
-## 🚀 Démarrage rapide
+## 🚀 Quick Start
 
-### 1. Structure des fichiers
+### 1. File Structure
 
 ```
 votre-projet/
@@ -43,7 +49,7 @@ votre-projet/
     └── fr.json
 ```
 
-### 2. Créer les fichiers de langue
+### 2. Create Language Files
 
 **lang/en.json**
 ```json
@@ -87,7 +93,7 @@ votre-projet/
 }
 ```
 
-### 3. HTML de base
+### 3. Basic HTML
 
 ```html
 <!DOCTYPE html>
@@ -99,24 +105,24 @@ votre-projet/
 </head>
 <body>
   
-  <!-- Traduction automatique avec l'attribut translate -->
+  <!-- Automatic translation using the translate attribute -->
   <h1 translate="home.title"></h1>
   <p translate="home.description"></p>
 
-  <!-- Sélecteur de langue -->
+  <!-- Language Selector -->
   <select id="langSelector">
     <option value="en">English</option>
     <option value="fr">Français</option>
   </select>
 
   <script>
-    // Initialisation simple
+    // Simple Initialization
     const lang = new LangJS({
       availableLanguages: ['en', 'fr'],
       defaultLanguage: 'en'
     });
 
-    // Changement de langue
+    // Language Change Event
     document.getElementById('langSelector').addEventListener('change', (e) => {
       lang.setLanguage(e.target.value);
     });
@@ -125,115 +131,115 @@ votre-projet/
 </html>
 ```
 
-## 📖 Configuration avancée
+## 📖 Advanced Configuration
 
-### Options de configuration
+### Configuration Options
 
 ```javascript
 const lang = new LangJS({
-  // Chemin vers les fichiers JSON
+  // Path to JSON files
   languagePath: './lang/',
   
-  // Langue par défaut
+  // Default language
   defaultLanguage: 'en',
   
-  // Langue de secours si une traduction manque
+  // Fallback language if a translation is missing
   fallbackLanguage: 'en',
   
-  // Langues disponibles
+  // Available languages
   availableLanguages: ['en', 'fr', 'es', 'de'],
   
-  // Clé de stockage localStorage
+  // localStorage storage key
   persistKey: 'langjs_language',
   
-  // Détecter la langue du navigateur
+  // Detect browser language
   detectBrowser: true,
   
-  // Initialisation automatique
+  // Automatic initialization
   autoInit: true,
   
-  // Attributs HTML personnalisés
+  // Custom HTML attributes
   attributes: ['translate', 'data-translate', 'data-i18n'],
   
-  // Attribut pour les placeholders
+  // Attribute for placeholders
   placeholderAttribute: 'translate-placeholder',
   
-  // Attribut pour les titres (tooltips)
+  // Attribute for titles (tooltips)
   titleAttribute: 'translate-title',
   
-  // Callback quand la langue change
+  // Callback triggered when the language changes
   onLanguageChange: (newLang) => {
-    console.log('Langue changée:', newLang);
+    console.log('Language changed to:', newLang);
   },
   
-  // Mode debug
+  // Debug mode
   debug: true
 });
 ```
 
-## 💡 Utilisation
+## 💡 Usage
 
-### Traduction de texte
+### Text Translation
 
 ```html
-<!-- Attribut translate -->
+<!-- translate attribute -->
 <h1 translate="home.title"></h1>
 
-<!-- Attribut data-translate -->
+<!-- data-translate attribute -->
 <p data-translate="home.description"></p>
 
-<!-- Placeholder -->
+<!-- Placeholder translation -->
 <input type="text" translate-placeholder="form.name">
 
-<!-- Title (tooltip) -->
+<!-- Title translation (tooltip) -->
 <button translate-title="form.submit">🚀</button>
 
-<!-- Aria-label pour l'accessibilité -->
+<!-- Aria-label translation for accessibility -->
 <button translate-aria="nav.close">X</button>
 ```
 
-### Traduction en JavaScript
+### JavaScript Translation
 
 ```javascript
-// Traduction simple
+// Simple translation
 const title = lang.get('home.title');
 
-// Traduction avec paramètres
+// Translation with parameters
 const welcome = lang.get('welcome.message', { name: 'John' });
-// Si welcome.message = "Hello {name}!" => "Hello John!"
+// If welcome.message = "Hello {name}!" => "Hello John!"
 
-// Traduction d'un élément spécifique
+// Translate a specific element
 const element = document.getElementById('myElement');
 lang.translateElement(element);
 ```
 
-### Changer de langue
+### Switching Languages
 
 ```javascript
-// Méthode asynchrone
+// Asynchronous method
 await lang.setLanguage('fr');
 
-// Obtenir la langue actuelle
+// Get the current language
 const current = lang.getCurrentLanguage(); // 'fr'
 
-// Vérifier si une langue est disponible
+// Check if a language is available
 if (lang.isLanguageAvailable('es')) {
   lang.setLanguage('es');
 }
 
-// Obtenir toutes les langues disponibles
+// Get all available languages
 const languages = lang.getAvailableLanguages(); // ['en', 'fr']
 ```
 
-### Formatage
+### Formatting
 
 ```javascript
-// Formater un nombre
+// Format a number
 lang.formatNumber(1234567.89); 
 // en: "1,234,567.89"
 // fr: "1 234 567,89"
 
-// Formater une date
+// Format a date
 lang.formatDate(new Date(), { 
   year: 'numeric', 
   month: 'long', 
@@ -242,7 +248,7 @@ lang.formatDate(new Date(), {
 // en: "November 8, 2025"
 // fr: "8 novembre 2025"
 
-// Formater une devise
+// Format a currency
 lang.formatCurrency(99.99, 'USD');
 // en: "$99.99"
 // fr: "99,99 $US"
@@ -252,25 +258,25 @@ lang.formatCurrency(49.99, 'EUR');
 // fr: "49,99 €"
 ```
 
-### Support RTL
+### RTL Support
 
 ```javascript
-// Obtenir la direction de la langue
-const direction = lang.getLanguageDirection(); // 'ltr' ou 'rtl'
+// Get the text direction of the language
+const direction = lang.getLanguageDirection(); // 'ltr' or 'rtl'
 
-// Appliquer automatiquement la direction au document
-lang.applyDirection(); // Ajoute dir="rtl" ou dir="ltr" au <html>
+// Automatically apply text direction to the document
+lang.applyDirection(); // Adds dir="rtl" or dir="ltr" to the <html> tag
 ```
 
-## 🎯 Exemples d'utilisation
+## 🎯 Implementation Examples
 
-### Exemple 1: Site web simple
+### Example 1: Simple Website
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mon Site</title>
+  <title>My Website</title>
   <script src="js/langjs.js"></script>
 </head>
 <body>
@@ -299,7 +305,7 @@ lang.applyDirection(); // Ajoute dir="rtl" ou dir="ltr" au <html>
 </html>
 ```
 
-### Exemple 2: Formulaire avec validation
+### Example 2: Form with Validation
 
 ```html
 <form id="contactForm">
@@ -319,57 +325,58 @@ lang.applyDirection(); // Ajoute dir="rtl" ou dir="ltr" au <html>
 <script>
   const lang = new LangJS({
     onLanguageChange: (newLang) => {
-      // Revalider le formulaire avec les nouveaux messages
+      // Revalidate the form with the updated language messages
       validateForm();
     }
   });
 </script>
 ```
 
-### Exemple 3: Contenu dynamique
+### Example 3: Dynamic Content
 
 ```javascript
-// Le contenu ajouté dynamiquement est automatiquement traduit
+// Dynamically added content is automatically translated
 function addMessage(key) {
   const div = document.createElement('div');
   div.setAttribute('translate', key);
   document.body.appendChild(div);
-  // LangJS détecte et traduit automatiquement le nouvel élément
+  // LangJS automatically detects and translates the new element
 }
 
 addMessage('notifications.success');
 ```
 
-### Exemple 4: Traduction avec paramètres
+### Example 4: Translations with Parameters
 
-**lang/fr.json**
+**lang/en.json**
 ```json
 {
-  "welcome": "Bienvenue {name} !",
-  "items": "Vous avez {count} article(s)",
-  "email": "Envoyé à {email} le {date}"
+  "welcome": "Welcome {name}!",
+  "items": "You have {count} item(s)",
+  "email": "Sent to {email} on {date}"
 }
 ```
 
 ```javascript
 lang.get('welcome', { name: 'Marie' });
-// "Bienvenue Marie !"
+// "Welcome Marie!"
 
 lang.get('items', { count: 5 });
-// "Vous avez 5 article(s)"
+// "You have 5 item(s)"
 
 lang.get('email', { 
   email: 'test@example.com',
   date: '08/11/2025'
 });
-// "Envoyé à test@example.com le 08/11/2025"
+// "Sent to test@example.com on 08/11/2025"
 ```
 
-## 🎨 Intégration avec des frameworks
+## 🎨 Framework Integration
 
-### Avec React
+### With React
 
 ```javascript
+import { useState, useEffect, useRef } from 'react';
 import LangJS from './langjs';
 
 function App() {
@@ -396,9 +403,11 @@ function App() {
 }
 ```
 
-### Avec Vue.js
+### With Vue.js
 
 ```javascript
+import LangJS from './langjs';
+
 export default {
   data() {
     return {
@@ -418,57 +427,53 @@ export default {
 }
 ```
 
-## 🔧 API Complète
+## 🔧 Full API
 
-### Méthodes principales
+### Core Methods
 
-| Méthode | Description |
+| Method | Description |
 |---------|-------------|
-| `setLanguage(lang)` | Change la langue (async) |
-| `get(key, params)` | Obtient une traduction |
-| `getCurrentLanguage()` | Retourne la langue actuelle |
-| `getAvailableLanguages()` | Liste les langues disponibles |
-| `translatePage()` | Traduit toute la page |
-| `translateElement(el)` | Traduit un élément spécifique |
-| `formatNumber(num, opts)` | Formate un nombre |
-| `formatDate(date, opts)` | Formate une date |
-| `formatCurrency(amount, currency)` | Formate une devise |
-| `getLanguageDirection()` | Retourne 'ltr' ou 'rtl' |
-| `applyDirection()` | Applique la direction au document |
-| `destroy()` | Nettoie l'instance |
+| `setLanguage(lang)` | Changes the active language (async) |
+| `get(key, params)` | Retrieves a translation string |
+| `getCurrentLanguage()` | Returns the active language |
+| `getAvailableLanguages()` | Lists all configured languages |
+| `translatePage()` | Translates the entire DOM |
+| `translateElement(el)` | Translates a specific DOM element |
+| `formatNumber(num, opts)` | Formats a number based on locale |
+| `formatDate(date, opts)` | Formates a date based on locale |
+| `formatCurrency(amount, currency)` | Formats a currency value |
+| `getLanguageDirection()` | Returns text direction ('ltr' or 'rtl') |
+| `applyDirection()` | Applies text direction to the html element |
+| `destroy()` | Cleans up the instance and observers |
 
-## 🐛 Dépannage
+## 🐛 Troubleshooting
 
-### Les traductions ne s'affichent pas
+### Translations are not showing up
 
-1. Vérifiez que les fichiers JSON sont au bon endroit
-2. Vérifiez la console pour les erreurs
-3. Activez le mode debug: `debug: true`
+1. Verify that your JSON files are located in the correct directory.
+2. Open your browser console to check for loading or execution errors.
+3. Enable debug mode in your configuration: `debug: true`.
 
-### La langue ne persiste pas
+### Language settings do not persist
 
-Vérifiez que localStorage est disponible dans votre navigateur (peut être désactivé en navigation privée).
+Make sure that `localStorage` is accessible in your web browser (it might be disabled or restricted in private browsing/incognito mode).
 
-### Les éléments dynamiques ne sont pas traduits
+### Dynamic elements are not being translated
 
-LangJS observe automatiquement le DOM, mais vous pouvez forcer la traduction:
+LangJS automatically monitors the DOM, but you can manually force an update on a specific node:
 ```javascript
-lang.translateElement(monElement);
+lang.translateElement(myElement);
 ```
 
-## 📄 Licence
+## 📄 License
 
-MIT License - Libre d'utilisation dans vos projets personnels et commerciaux.
+MIT License - Free to use for both personal and commercial projects.
 
-## 👨‍💻 Auteur
+## 👨‍💻 Author
 
-Développé par **Emmadiblo**
+Developed by [Emmadiblo257](https://github.com)
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
-
----
-
-
-**Enjoy coding! 🚀**
+Contributions are always welcome! Feel free to open an issue or submit a pull request on the official repository.
+*Enjoy coding! 🚀*
