@@ -1,8 +1,6 @@
-name: Node.js Package
+name: Publier la package sur NPM
 
 on:
-  release:
-    types: [created]
   workflow_dispatch:
 
 jobs:
