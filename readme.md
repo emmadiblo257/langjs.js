@@ -1,10 +1,12 @@
 # LangJS 
 
-[![NPM Version](https://shields.io)](https://npmjs.com)
-[![NPM Downloads](https://shields.io)](https://npmjs.com)
-[![GitHub License](https://shields.io)](https://github.com)
-[![GitHub Stars](https://shields.io)](https://github.com/stargazers)
-[![GitHub Issues](https://shields.io)](https://github.com/issues)
+
+
+[![npm version](https://img.shields.io/npm/v/langjs.js)](https://www.npmjs.com/package/langjs.js)
+[![NPM Downloads](https://img.shields.io/npm/dm/langjs.js)](https://www.npmjs.com/package/langjs.js)
+[![NPM License](https://img.shields.io/npm/l/langjs.js)](https://www.npmjs.com/package/langjs.js)
+
+
 
 A simple yet powerful JavaScript framework for multilingual translation management on your web pages. Dependency-free, lightweight, and easy to use.
 
@@ -471,9 +473,10 @@ MIT License - Free to use for both personal and commercial projects.
 
 ## 👨‍💻 Author
 
-Developed by [Emmadiblo257](https://github.com)
+Developed by [Emmadiblo257](https://github.com/emmadiblo257)
 
 ## 🤝 Contributing
 
 Contributions are always welcome! Feel free to open an issue or submit a pull request on the official repository.
+
 *Enjoy coding! 🚀*
